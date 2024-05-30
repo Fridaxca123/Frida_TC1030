@@ -1,80 +1,78 @@
-#include "streamingcomp.h"
-#include "contenido.h"
-#include "series.h"
-#include "usuario.h"
 #include <iostream>
 #include <string>
+#include "subscribe.h"
+#include "enterprise.h"
+#include "content.h"
+#include "music.h"
+#include "podcast.h"
+using namespace std;
 
-streamingcomp frinet("Frinet", 2024, 100, 560);
-
-
-void mostrar_menu() {
-    cout << "\nMENU" << endl;
-    cout << "1. Información de la empresa" << endl;
-    cout << "2. Registrar un nuevo contenido" << endl;
-    cout << "3. Registra usuario" << endl;
-    cout << "4. Salir" << endl;
-    cout << "\nIngrese su elección: ";
+//Creo objeto para enterprise
+Enterprise ent("\nSpotify", 2006, "Daniel Ek", "Stockholm");
+//Creo objeto para music
+Music mus1("When we were young", "Adele", "Pop", "25", 4, 51);
+Music mus2("Necesito decirtelo", "cardenales de Nuevo Leon", "Regional Mexicano", "De Norta a Sur", 3, 30);
+Music mus3("Californica", "La gusana ciega", "Rock español", "Monarca", 3, 30);
+Music mus4("Mockingbird", "Eminem", "Hip-Hop", "Encore", 4, 11);
+Music mus5("Perdoname", "Factoria", "Reggaeton", "Nuevas metas", 4, 02);
+//Creo objeto para podcast
+Podcast pod1("Mas alla del rosa", "Jessica Fernandez", "Gender", "Weekly", 3.22, "Jessica Fernandez" );
+Podcast pod2("Niñas bien", "Der y Ando", "Comedy", "Weeklu", 1.45, "Spotify" );
+Podcast pod3("TEd Daily", "TED", "Educational", "Every two weeks", 0.3, "TED" );
+Podcast pod4("Global News Podcast", "BBC", "News", "Daily", 0.5, "BBC" );
+Podcast pod5("El vuelo de una abeja", "Luz Carreiro", "Personal stories", "Monthly", 1.45, "Luz Carreiro" );
+//Menu
+void show_menu() {
+    cout <<"\n ✧.*MENU✧.*" << endl;
+    cout << "1. Enterprise info:" << endl;
+    cout << "2. Explore music" << endl;
+    cout << "3. Explore podcast" << endl;
+    cout << "4. Subscribe" << endl;
+    cout << "5. Salir" << endl;
+    cout << "\nChoose an option: ";
 }
-
-void ingresa_contenido(){
-    string titulo, genero, tipo;
-    int anio;
-    float duracion;
-    cout << "\nIngrese título del contenido: ";
+//Interaccion con el usuario para que inngrese los datos
+void user_data(){
+    string user_name, user_email;
+    int user_age, months;
+    cout << "\nUser's name: ";
     cin.ignore();
-    getline(cin, titulo);
-    cout << "Ingrese género del contenido: ";
-    getline(cin, genero);
-    cout << "Ingrese tipo del contenido (serie o película): ";
-    getline(cin, tipo);
-    cout << "Ingrese año de lanzamiento del contenido: ";
-    cin >> anio;
-    cout << "Ingrese duración del contenido (en minutos): ";
-    cin >> duracion;
-
+    getline(cin, user_name);
+    cout << "Email: ";
+    getline(cin, user_email);
+    cout << "Age: ";
+    cin >> user_age;
+    cout <<"Months you wish to subscribe: ";
+    cin>>months;
+    Subscribe user(user_name, user_age, user_email, months);
+    user.payment_info();
 }
 
-void datos_usuario(){
-    string nombre_usu, email;
-    int edad, meses;
-    cout << "\nIngrese nombre de usuario: ";
-    cin.ignore();
-    getline(cin, nombre_usu);
-    cout << "Ingrese email: ";
-    getline(cin, email);
-    cout << "Ingrese edad: ";
-    cin >> edad;
-    cout <<"Ingrese meses de subscripcion:";
-    cin>>meses;
-    Usuario usuario(nombre_usu, edad, email, meses);
-    usuario.info_pago();
-}
-
-void programa (){
-    cout<<"\nBienvenidos "<<endl;
-    int opcion;
+int main(){
+    cout<<"✧.* Welcome to spotify✧.*"<<endl;
+    int option;
     bool continuar=true;
     while (continuar){
-        mostrar_menu();
-        cin>>opcion;
-        if (opcion==1){frinet.muestra_info();}
-        else if (opcion==2){
-            ingresa_contenido();
-            Contenido*cptr;
-            Series s;
-            cptr=&s;
-            cptr->display();
-            cptr->print();
-            }
-        else if (opcion==3){
-            cout<<"\n Se ha llevado a cabo su registro"<<endl;
-            datos_usuario();
+        show_menu();
+        cin >> option;
+        if (option==1){ent.show_info(); break;}
+        else if (option==2){
+            mus1.music_info();
+            mus2.music_info();
+            mus3.music_info();
+            mus4.music_info();
+            mus5.music_info();
             break;}
-        else if (opcion==4){continuar=false;}
-    }}
+        else if (option==3){
+            pod1.podcast_info();
+            pod2.podcast_info();
+            pod3.podcast_info();
+            pod4.podcast_info();
+            pod5.podcast_info();
+            break;}
+        else if(option==4){user_data(); break;}
+        else if (option==5){continuar=false;}
+    }
 
-int main() {
-    programa();
     return 0;
 }
