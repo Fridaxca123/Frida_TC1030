@@ -9,18 +9,21 @@ using namespace std;
 
 //Creo objeto para enterprise
 Enterprise ent("\nSpotify", 2006, "Daniel Ek", "Stockholm");
+
 //Creo objeto para music
 Music mus1("When we were young", "Adele", "Pop", "25", 4, 51);
 Music mus2("Necesito decirtelo", "cardenales de Nuevo Leon", "Regional Mexicano", "De Norta a Sur", 3, 30);
 Music mus3("Californica", "La gusana ciega", "Rock español", "Monarca", 3, 30);
 Music mus4("Mockingbird", "Eminem", "Hip-Hop", "Encore", 4, 11);
 Music mus5("Perdoname", "Factoria", "Reggaeton", "Nuevas metas", 4, 02);
+
 //Creo objeto para podcast
 Podcast pod1("Mas alla del rosa", "Jessica Fernandez", "Gender", "Weekly", 3.22, "Jessica Fernandez" );
 Podcast pod2("Niñas bien", "Der y Ando", "Comedy", "Weeklu", 1.45, "Spotify" );
 Podcast pod3("TEd Daily", "TED", "Educational", "Every two weeks", 0.3, "TED" );
 Podcast pod4("Global News Podcast", "BBC", "News", "Daily", 0.5, "BBC" );
 Podcast pod5("El vuelo de una abeja", "Luz Carreiro", "Personal stories", "Monthly", 1.45, "Luz Carreiro" );
+
 //Menu
 void show_menu() {
     cout <<"\n ✧.*MENU✧.*" << endl;
@@ -31,7 +34,8 @@ void show_menu() {
     cout << "5. Salir" << endl;
     cout << "\nChoose an option: ";
 }
-//Interaccion con el usuario para que inngrese los datos
+
+//Interaccion con el usuario para que ingrese los datos
 void user_data(){
     string user_name, user_email;
     int user_age, months;
@@ -48,11 +52,12 @@ void user_data(){
     user.payment_info();
 }
 
+//Main
 int main(){
     cout<<"✧.* Welcome to spotify✧.*"<<endl;
     int option;
     bool continuar=true;
-    while (continuar){
+    while (continuar){ //Mientras continuar sea verdadero el codigo continua
         show_menu();
         cin >> option;
         if (option==1){ent.show_info(); break;}
