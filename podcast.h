@@ -6,33 +6,26 @@
 #include "content.h"
 
 using namespace std;
-
+/*Define la clase podcast, la cual hereda publicamente 
+de la clase Content */
 class Podcast : public Content {
-private:
-    string frequency; // Corregido el nombre de la variable
+private: //Atributos privados
+    string frequency;
     float hours;
     string company;
 
-public:
-    // Constructor de Podcast
-    Podcast(string name_cont, string author, string type_cont, string frequency, float hours, string company)
-        : Content(name_cont, author, type_cont), frequency(frequency), hours(hours), company(company) {} // Corregidos los nombres de las variables
+public: //Inicia la seccion publica
+/*Constructor para Podcast, toma tanto los parametros
+de contructor y tambien los propios*/ 
+Podcast(string name_cont, string author, string type_cont, string frequency, float hours, string company)
+: Content(name_cont, author, type_cont), frequency(frequency), hours(hours), company(company) {}
 
-    // Método para mostrar los datos específicos de Podcast
-    void data(){
-        cout << "Frequency: " << frequency << endl; // Corregido el nombre de la variable
-        cout << "Duration: " << hours << " hours" << endl;
-        cout << "Company: " << company << endl;
-    }
-
-    // Método para mostrar la información completa de Podcast
-    void podcast_info() {
-        cout << "Name: " << name_cont << endl;
-        cout << "Author: " << author << endl;
-        cout << "Type: " << type_cont << endl;
-        data();
-    }
+/*Metodo que muestra infomacion especifica del podcast, 
+sobreescribe el metodo virtual puro de la clase Content*/ 
+void MasInfo(){
+cout << "Frequency: " << frequency << endl; //Imprime
+cout << "Duration: " << hours << " hours" << endl;
+cout << "Company: " << company << endl; }
 };
 
 #endif // PODCAST_H
-
