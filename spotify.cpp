@@ -13,6 +13,7 @@
 #include "content.h"
 #include "music.h"
 #include "podcast.h"
+#include "payment.h"
 
 using namespace std;
 
@@ -62,11 +63,16 @@ void show_menu() {
     cout << "5. Salir" << endl;
     cout << "\nChoose an option: ";
 }
-
+void show_subs(){
+    cout << "\n✧.*SUBSCRIBE✧.*" << endl;
+    cout << "1. Individual" << endl;
+    cout << "2. Student" <<endl;
+    cout << "3. Duo" << endl;
+}
 /* Funcion que recopila datos del usuario, crea un objeto de 
 *tipo subscribe y luego manda llamar un metodo paymnet.info()
 *en este objeto */
-void user_data() {
+void individual_data() {
     string user_name, user_email;
     int user_age, months;
     cout << "\nUser's name: ";
@@ -78,9 +84,49 @@ void user_data() {
     cin >> user_age;
     cout << "Months you wish to subscribe: ";
     cin >> months;
-    Subscribe user(user_name, user_age, user_email, months);
-    user.payment_info();
+    Individual user(user_name, user_age, user_email, months);
+    user.show_info();
 }
+void student_data() {
+    string user_name, user_email, university;
+    int user_age, months, id;
+    cout << "\nUser's name: ";
+    cin.ignore(); // Ignore any newline character left in the buffer
+    getline(cin, user_name);
+    cout << "University: ";
+    getline(cin, university);
+    cout << "ID: ";
+    cin >> id;
+    cin.ignore(); // Ignore the newline character left after reading id
+    cout << "Email: ";
+    getline(cin, user_email);
+    cout << "Age: ";
+    cin >> user_age;
+    cout << "Months you wish to subscribe: ";
+    cin >> months;
+    Student user(user_name, user_age, user_email, months, university, id);
+    user.show_info();
+}
+
+void duo_data() {
+    string user_name, user_email, user_name2;
+    int user_age, months;
+    cout << "\nPlans Manager Name: ";
+    cin.ignore();
+    getline(cin, user_name);
+    cout << "Email: ";
+    getline(cin, user_email);
+    cout << "Age: ";
+    cin >> user_age;
+    cout << "Months you wish to subscribe: ";
+    cin >> months;
+    cout << "Second User's Name: ";
+    cin >> user_name2;
+    cin.ignore();
+    Duo user(user_name, user_age, user_email, months, user_name2);
+    user.show_info();
+}
+
 /* Main responsable de manejar la interaccion del 
 *usuario con un menu, permitiendo seleccionar diferentes 
 *opciones que ejecutan diferentes funcionalidades.*/
@@ -103,8 +149,19 @@ int main() {
             musiccont(); /*Manda llamar a la funcion musicont
             en la cual se encuentra el objeto de music*/
         } else if (option == 4) { //Subscirbete
-            user_data(); /*Manda llamar la user_data la cual 
+            int type;
+            show_subs();
+            cin >> type;
+            if (type==1){
+                individual_data();/*Manda llamar la user_data la cual 
             pide al usuario datod */
+            }
+            else if (type==2){
+                student_data();/*Manda llamar la duo_data la cual*/
+            } 
+            else if (type==3){
+                duo_data();/*Manda llamar la duo_data la cual*/
+            }
         } else if (option == 5) { //Salir del programa
             continuar = false; /*Termina el bloque while y el programa
             termina*/
@@ -113,3 +170,4 @@ int main() {
 
     return 0; //Fin del bucle y retorno
 }
+
