@@ -18,7 +18,7 @@ protected: //Atributos protegidos
     string name_cont;
     string author;
     string type_cont;
-    Content* cont[MAX];
+    Content* cont[MAX]; 
 
 public: //Inicia la sccion publica
 /* Constructor por defecto que inicializa los 
@@ -53,3 +53,4 @@ virtual ~Content() {}
 };
 
 #endif // CONTENT_H
+
