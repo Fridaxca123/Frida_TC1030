@@ -4,9 +4,9 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//Define la clase subscribe 
+//Define la clase subscribe que es una clase madre
 class Subscribe {
-private: //Atributos privados 
+protected: //Atributos protected porque es herencia
     string user_name;
     int user_age;
     string user_email;
@@ -27,15 +27,5 @@ string get_user_name()const {return user_name;} //Retorna
 int get_user_age()const {return user_age;}
 string get_user_email()const {return user_email;}
 int get_months()const {return months;}
-float payment() const {
-        return (months * 200) * 0.16;
-    }
-// Método que muestra    
-void payment_info() {
-        cout<<"\nYou have succesfully subscirbed to spotify"<<endl;//imprime
-        cout << "Name: " << user_name << endl;
-        cout << "Total payment: " << payment() << endl;
-        cout << "Please make your deposit to the following account: \nSpotify \nHSBC: SPO23456789"<<endl;
-    }
-}; 
+};
 #endif // SUBSCRIBE_H
