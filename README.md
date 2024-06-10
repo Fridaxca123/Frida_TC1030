@@ -7,6 +7,6 @@ La clase principal es enterprise, la cual crea el objeto de empresa que proporci
 # Consideraciones
 El programa solo corre en consola y esta escrito en C++ por lo que corre en todos los sistemas operativos
 Algunos de los casos en los que mi proyecto dejaria de funcionar son los siguientes: 
-- Si se ingresa un tipo de dato que no corresponde con el de la variable.
+- Si se ingresa un string en los valores que pide int el codigo colapsa. 
 - La clase content tiene un arreglo con limite 5, para fines practicos, asi que si se crean mas objetos que este limite el codigo podria llegar a tronar.
   
