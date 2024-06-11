@@ -9,4 +9,7 @@ El programa solo corre en consola y esta escrito en C++ por lo que corre en todo
 Algunos de los casos en los que mi proyecto dejaria de funcionar son los siguientes: 
 - Si se ingresa un string en los valores que pide int el codigo colapsa. 
 - La clase content tiene un arreglo con limite 5, para fines practicos, asi que si se crean mas objetos que este limite el codigo podria llegar a tronar.
-  
+
+# Mejoras que hice a mi proeycto a lo largo de las semanas 
+- El mayor cambio que hice fue que esraba implementando erroneamente un arreglo que fuardada los datos de contenidos dentro de l clase de contenido. Lo anterior estaba completamente mal y tuve que cambiar el arreglo tanto en el codigo como en el uml para que este estuvira en la clase principal enterprise. 
+- Tambien lleve a cabo varios cambios en mi uml principalmente en los metodos y en que estaba usando flechascon relleno para representar herenecia y esto estaba mal.
