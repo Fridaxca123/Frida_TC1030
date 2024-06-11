@@ -15,8 +15,11 @@ private: //Atributos privados
     string company;
 
 public: //Inicia la seccion publica
+//constructor por defecto 
+Podcast(): Content("","", ""){}; //Sobrecarga
+
 /*Constructor para Podcast, toma tanto los parametros
-de contructor y tambien los propios*/ 
+de content y tambien los propios*/ 
 Podcast(string name_cont, string author, string type_cont, string frequency, float hours, string company)
 : Content(name_cont, author, type_cont), frequency(frequency), hours(hours), company(company) {}
 
