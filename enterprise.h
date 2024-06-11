@@ -55,12 +55,11 @@ void Enterprise::creaEjemplosMusic() {
 }
 void Enterprise::muestraEjemplosMusic() const {
     // Usar el polimorfismo para llamar a MasInfo
-    for (int i = 0; i<MAX; ++i) { 
-        if (cont[i] != nullptr) {
-            cont[i]->InfoContent();
+    int index=rand()%MAX; 
+        if (cont[index] != nullptr) {
+            cont[index]->InfoContent();
             // Llama al método sobreescrito en Podcast
-            cont[i]->MasInfo();}
-        }
+            cont[index]->MasInfo();}
 }
 void Enterprise::muestraEjemplosMusic( string tipo) const {
     for (int i = 0; i < MAX; ++i) {
@@ -78,12 +77,11 @@ void Enterprise::creaEjemplosPodcast(){
     cont[4]= new Podcast("El vuelo de una abeja", "Luz Carreiro", "Personal stories", "Monthly", 1.45, "Luz Carreiro");
 }
 void Enterprise::muestraEjemplosPodcast() const {
-    for (int i = 0; i < MAX; ++i) {
-        if (cont[i] != nullptr) {
-            cont[i]->InfoContent();
-            cont[i]->MasInfo();
+    int index= rand()%MAX;
+        if (cont[index] != nullptr) {
+            cont[index]->InfoContent();
+            cont[index]->MasInfo();
         }
-    }
 }
 
 void Enterprise::muestraEjemploPodcast(string tipo) const {
