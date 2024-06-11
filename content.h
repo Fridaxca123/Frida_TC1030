@@ -6,33 +6,25 @@
 
 using namespace std;
 
-const int MAX = 5; /*Constante que define 
-el numero maximo de contenidos*/
-
 /*Delaracion de clase base content
 Es una clase abstracta ya que implementa una 
 funcion virtual pura, no puede crear objetos
 diractamente*/
 class Content {
-protected: //Atributos protegidos
+protected: //Atributos protegidos porque es herencia
     string name_cont;
     string author;
     string type_cont;
-    Content* cont[MAX]; 
-
-public: //Inicia la sccion publica
+    
+public: //Inicia la seccion publica
 /* Constructor por defecto que inicializa los 
 atributos a cadenas vacías y el arreglo a punteros nulos */
-Content() : name_cont(""), author(""), type_cont("") { 
-    for (int i = 0; i < MAX; i++) {
-        cont[i] = nullptr;}
-    }
+Content() : name_cont(""), author(""), type_cont("") {}; //Sobrecarga
+
 /* Constructor que inicializa los atributos con los valores 
 proporcionados y el arreglo a punteros nulos */
-Content(string namco, string aut, string con) : name_cont(namco), author(aut), type_cont(con) {
-    for (int i = 0; i < MAX; i++) {
-        cont[i] = nullptr; }
-    }
+Content(string namco, string aut, string con) : 
+name_cont(namco), author(aut), type_cont(con) {};
 
 // Métodos getter que retornan los valores de los atributos
 string getNameCont() const { return name_cont; } //Retorna
@@ -45,7 +37,7 @@ cout << "\nName: " << name_cont << endl; //Imprime atributos
 cout << "Author: " << author << endl;
 cout << "Type: " << type_cont << endl; }
 
-// Pure virtual method to display additional information
+// Metodo virtual puro que sera sobreescrito
 virtual void MasInfo() = 0;
 
 // Destructor virtual
