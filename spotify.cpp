@@ -119,6 +119,7 @@ void duo_data() {
  * opciones que ejecutan diferentes funcionalidades.
  */
 int main() {
+    srand(time(0));//Inicializa el generado de numero aleatorios
     // Imprime mensaje de bienvenida
     cout << "✧.* Welcome to Spotify ✧.*" << endl;
     int option; // Almacena la opción seleccionada por el usuario
