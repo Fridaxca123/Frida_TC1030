@@ -9,6 +9,7 @@ El programa solo corre en consola y esta escrito en C++ por lo que corre en todo
 Algunos de los casos en los que mi proyecto dejaria de funcionar son los siguientes: 
 - Si se ingresa un string en los valores que pide int el codigo colapsa. 
 - El arreglo content limite 5, para fines practicos, asi que si se crean mas objetos que este limite el codigo podria llegar a tronar.
+- El arreglo subscription tiene limite de 2 para fines practicos, si se agregan mas el codigo comienza a ciclarse.
 - Para la funcion 5 del menu primero se debe haber registrado al usuario, si este no se registro primero la funcion 5 de mostrar subscripccion no funcionara. 
 
 # Mejoras que hice a mi proeycto a lo largo de las semanas 
