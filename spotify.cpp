@@ -151,7 +151,7 @@ int main() {
                 duo_data(); // Manda llamar función que determina el precio del paquete duo
             }
         } else if (option == 5) { 
-            ent.muestraSubscription();
+            ent.muestraSubscription(); //Muestra informacion de la subscripcion previamente realizada
         } else if (option == 6) { // Salir del programa
             continuar = false; // Termina el bucle while y el programa
         }
@@ -159,4 +159,3 @@ int main() {
 
     return 0; // Fin del bucle y retorno
 }
-
