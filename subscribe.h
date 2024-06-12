@@ -27,8 +27,12 @@ string get_user_name()const {return user_name;} //Retorna
 int get_user_age()const {return user_age;}
 string get_user_email()const {return user_email;}
 int get_months()const {return months;}
-//Metodo virtual para obtener los datos basicos
-virtual void show_info()=0;
+
+//Metodo virtual puro que sera sobreescrito
+virtual void show_info()=0; //Informacion de la subscripcion
+virtual float payment()=0; //Calcula pago
+
+//Destructor virtual
 virtual ~Subscribe() {}
 };
 #endif // SUBSCRIBE_H
