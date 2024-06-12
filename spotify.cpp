@@ -30,7 +30,8 @@ void show_menu() {
     cout << "2. Explore podcast" << endl;
     cout << "3. Explore music" << endl;
     cout << "4. Subscribe" << endl;
-    cout << "5. Salir" << endl;
+    cout << "5. View Subscription" << endl;
+    cout << "6. Salir" << endl;
     cout << "\nChoose an option: ";
 }
 
@@ -62,8 +63,9 @@ void individual_data() {
     cin >> user_age;
     cout << "Months you wish to subscribe: ";
     cin >> months;
-    Individual user(user_name, user_age, user_email, months);
-    user.show_info();
+    Individual* user = new Individual(user_name, user_age, user_email, months);
+    user->show_info();
+    ent.agregaSubscription(user); // Agrega la suscripción al objeto Enterprise
 }
 
 /* Función que recopila datos del usuario, crea un objeto de 
@@ -87,8 +89,9 @@ void student_data() {
     cin >> user_age;
     cout << "Months you wish to subscribe: ";
     cin >> months;
-    Student user(user_name, user_age, user_email, months, university, id);
-    user.show_info();
+    Student* user = new Student(user_name, user_age, user_email, months, university, id);
+    user->show_info();
+    ent.agregaSubscription(user); // Agrega la suscripción al objeto Enterprise
 }
 
 /* Función que recopila datos del usuario, crea un objeto de 
@@ -110,8 +113,9 @@ void duo_data() {
     cout << "Second User's Name: ";
     cin.ignore();
     getline(cin, user_name2);
-    Duo user(user_name, user_age, user_email, months, user_name2);
-    user.show_info();
+    Duo* user = new Duo(user_name, user_age, user_email, months, user_name2);
+    user->show_info();
+    ent.agregaSubscription(user); // Agrega la suscripción al objeto Enterprise
 }
 
 /* Main responsable de manejar la interacción del 
@@ -146,7 +150,9 @@ int main() {
             } else if (type == 3) {
                 duo_data(); // Manda llamar función que determina el precio del paquete duo
             }
-        } else if (option == 5) { // Salir del programa
+        } else if (option == 5) { 
+            ent.muestraSubscription();
+        } else if (option == 6) { // Salir del programa
             continuar = false; // Termina el bucle while y el programa
         }
     }
