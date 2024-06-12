@@ -27,5 +27,8 @@ string get_user_name()const {return user_name;} //Retorna
 int get_user_age()const {return user_age;}
 string get_user_email()const {return user_email;}
 int get_months()const {return months;}
+//Metodo virtual para obtener los datos basicos
+virtual void show_info()=0;
+virtual ~Subscribe() {}
 };
 #endif // SUBSCRIBE_H
