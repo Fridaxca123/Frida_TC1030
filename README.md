@@ -8,8 +8,10 @@ La clase principal es enterprise, la cual crea el objeto de empresa que proporci
 El programa solo corre en consola y esta escrito en C++ por lo que corre en todos los sistemas operativos
 Algunos de los casos en los que mi proyecto dejaria de funcionar son los siguientes: 
 - Si se ingresa un string en los valores que pide int el codigo colapsa. 
-- La clase content tiene un arreglo con limite 5, para fines practicos, asi que si se crean mas objetos que este limite el codigo podria llegar a tronar.
+- El arreglo content limite 5, para fines practicos, asi que si se crean mas objetos que este limite el codigo podria llegar a tronar.
+- Para la funcion 5 del menu primero se debe haber registrado al usuario, si este no se registro primero la funcion 5 de mostrar subscripccion no funcionara. 
 
 # Mejoras que hice a mi proeycto a lo largo de las semanas 
 - El mayor cambio que hice fue que esraba implementando erroneamente un arreglo que fuardada los datos de contenidos dentro de l clase de contenido. Lo anterior estaba completamente mal y tuve que cambiar el arreglo tanto en el codigo como en el uml para que este estuvira en la clase principal enterprise. 
 - Tambien lleve a cabo varios cambios en mi uml principalmente en los metodos y en que estaba usando flechascon relleno para representar herenecia y esto estaba mal.
+
