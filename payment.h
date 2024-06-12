@@ -1,7 +1,8 @@
+/*Incluye tres clase que heredan de subscribe*/
 #ifndef PAYMENT_H
 #define PAYMENT_H
 
-#include "subscribe.h"  // Correct header inclusion
+#include "subscribe.h"  //Incluye clase subscribe
 #include <string>
 #include <iostream>
 using namespace std;
@@ -87,3 +88,4 @@ public:
 }; 
 
 #endif // PAYMENT_H
+
