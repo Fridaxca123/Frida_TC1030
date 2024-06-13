@@ -33,4 +33,3 @@ cout << "Duration: " << min << " minutes and " << sec << " seconds" << endl; }
 
 #endif // MUSIC_H
 
-
