@@ -13,6 +13,8 @@ Algunos de los casos en los que mi proyecto dejaria de funcionar son los siguien
 - Para la funcion 5 del menu primero se debe haber registrado al usuario, si este no se registro primero la funcion 5 de mostrar subscripccion no funcionara. 
 
 # Mejoras que hice a mi proyecto a lo largo de las semanas 
-- El mayor cambio que hice fue que esraba implementando erroneamente un arreglo que fuardada los datos de contenidos dentro de l clase de contenido. Lo anterior estaba completamente mal y tuve que cambiar el arreglo tanto en el codigo como en el uml para que este estuvira en la clase principal enterprise. 
-- Tambien lleve a cabo varios cambios en mi uml principalmente en los metodos y en que estaba usando flechascon relleno para representar herenecia y esto estaba mal.
+-Cambie el concepto de mi proyecto debido a que no me gustaba el tema, antes era de una empresa que manejaba los empleados y articulos adquiridos. 
+- El mayor cambio que hice fue que esraba implementando erroneamente un arreglo que guardaba los datos de contenidos dentro de la clase de contenido. Lo anterior estaba completamente mal y tuve que cambiar el arreglo tanto en el codigo como en el uml para que este estuvira en la clase principal enterprise. 
+- Tambien lleve a cabo varios cambios en mi uml principalmente en los metodos y en que estaba usando flechascon relleno para representar herencia y esto estaba mal.
+- Para que el usuario pudiera consultar su subscripcion porteriormente cree un arreglo que guardara la subscripcion. 
 
