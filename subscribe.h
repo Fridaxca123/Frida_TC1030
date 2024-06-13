@@ -36,3 +36,4 @@ virtual float payment()=0; //Calcula pago
 virtual ~Subscribe() {}
 };
 #endif // SUBSCRIBE_H
+
